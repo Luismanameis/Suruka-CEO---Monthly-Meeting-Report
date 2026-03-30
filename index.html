@@ -101,13 +101,16 @@
         text-transform: uppercase;
     }
 
+    .grid-2 { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px; }
+
     table { width: 100%; border-collapse: collapse; background: white; margin-bottom: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
     th { background: #f8fafc; text-align: left; padding: 15px; font-size: 11px; font-weight: 800; color: var(--muted); text-transform: uppercase; border-bottom: 2px solid var(--border); }
-    td { padding: 15px; border-bottom: 1px solid #f1f5f9; font-size: 15px; font-weight: 600; }
+    td { padding: 15px; border-bottom: 1px solid #f1f5f9; font-size: 14px; font-weight: 600; }
 
     .perf-high { color: var(--pass); font-weight: 900; }
     .perf-low { color: var(--fail); font-weight: 900; }
     .green-text { color: var(--suruka-green); font-weight: 800; }
+    .muted-text { color: var(--muted); font-size: 12px; }
 
 </style>
 </head>
@@ -115,120 +118,111 @@
 
 <div class="top-ticker-wrap">
     <div class="ticker">
-        <div class="ticker-item">Mary: <b>₦50.34M</b></div>
-        <div class="ticker-item">Bolu: <b>₦31.82M</b></div>
-        <div class="ticker-item">Esther: <b>₦11.26M</b></div>
-        <div class="ticker-item">Jaya: <b>₦12.91M</b></div>
-        <div class="ticker-item">Susan: <b>₦12.88M</b></div>
-        <div class="ticker-item">Lewa: <b>₦10.24M</b></div>
-        <div class="ticker-item">Rachel: <b>₦9.86M</b></div>
-        <div class="ticker-item">Divine: <b>₦9.20M</b></div>
-        <div class="ticker-item">Jane: <b>₦0.88M</b></div>
-        <div class="ticker-item">Mary: <b>₦50.34M</b></div>
-        <div class="ticker-item">Bolu: <b>₦31.82M</b></div>
-        <div class="ticker-item">Esther: <b>₦11.26M</b></div>
+        <div class="ticker-item">Mary YTD: <b>₦50.34M</b></div>
+        <div class="ticker-item">Bolu YTD: <b>₦31.82M</b></div>
+        <div class="ticker-item">Jaya YTD: <b>₦12.91M</b></div>
+        <div class="ticker-item">Susan YTD: <b>₦12.88M</b></div>
+        <div class="ticker-item">Esther YTD: <b>₦11.26M</b></div>
+        <div class="ticker-item">Lewa YTD: <b>₦10.24M</b></div>
+        <div class="ticker-item">Rachel YTD: <b>₦9.86M</b></div>
+        <div class="ticker-item">Divine YTD: <b>₦9.20M</b></div>
+        <div class="ticker-item">Jane YTD: <b>₦0.88M</b></div>
     </div>
 </div>
 
 <div class="fixed-dashboard">
     <div class="header-flex">
-        <h1>SURUKA PERFORMANCE AUDIT</h1>
+        <h1>SURUKA CEO COMMAND CENTER</h1>
         <div style="text-align: right;">
-            <span style="font-size: 12px; font-weight: 800; color: var(--muted);">EXECUTIVE SESSION</span><br>
-            <b style="font-size: 20px; color: var(--suruka-green);">MARCH 2026</b>
+            <span style="font-size: 12px; font-weight: 800; color: var(--muted);">WEDNESDAY STRATEGY AUDIT</span><br>
+            <b style="font-size: 20px; color: var(--suruka-green);">MARCH 30, 2026</b>
         </div>
     </div>
     <div class="metric-row">
-        <div class="mini-card"><label>March Revenue</label><div class="val">₦50.43M</div><div class="sub" style="color:var(--fail)">-₦2.82M vs Feb</div></div>
+        <div class="mini-card"><label>Monthly Revenue</label><div class="val">₦50.43M</div><div class="sub" style="color:var(--fail)">-₦2.82M vs Feb</div></div>
         <div class="mini-card"><label>Total Customers</label><div class="val">710</div><div class="sub" style="color:var(--fail)">-48 Units vs Feb</div></div>
-        <div class="mini-card"><label>Monthly Conversion</label><div class="val">4.7%</div><div class="sub" style="color:var(--muted)">6,550 Total Leads</div></div>
-        <div class="mini-card"><label>Yearly Portfolio</label><div class="val">₦153.86M</div><div class="sub" style="color:var(--pass)">2,250 Cust YTD</div></div>
+        <div class="mini-card"><label>Monthly Conversion</label><div class="val">4.7%</div><div class="sub" style="color:var(--muted)">6,550 Leads Profiled</div></div>
+        <div class="mini-card"><label>YTD Portfolio</label><div class="val">₦153.86M</div><div class="sub" style="color:var(--fail)">-23.09% vs 2025</div></div>
     </div>
 </div>
 
 <div class="scroll-content">
 
-    <div class="section-title">Revenue Segment Analysis (March)</div>
+    <div class="grid-2">
+        <div>
+            <div class="section-title">March Revenue Segment Analysis</div>
+            <table>
+                <thead>
+                    <tr><th>Segment</th><th>Revenue</th><th>Cust.</th><th>Avg Spend</th><th>Cont.</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Other Channels</td><td class="green-text">₦25,174,200</td><td>226</td><td>₦111,390</td><td class="perf-high">49.9%</td></tr>
+                    <tr><td>IG and FB (Susan)</td><td class="green-text">₦12,337,800</td><td>237</td><td>₦52,058</td><td class="perf-high">24.4%</td></tr>
+                    <tr><td>CS (Ray)</td><td class="green-text">₦7,428,600</td><td>118</td><td>₦62,954</td><td>14.7%</td></tr>
+                    <tr><td>Landing Page (Mary)</td><td class="green-text">₦5,496,400</td><td>129</td><td>₦42,607</td><td>10.9%</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <div class="section-title">2026 Target Projection</div>
+            <table>
+                <thead>
+                    <tr><th>Metric</th><th>Target</th><th>Achieved</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Revenue</td><td>₦2.5B</td><td class="perf-low">6.15%</td></tr>
+                    <tr><td>Customers</td><td>25,000</td><td class="perf-low">9.00%</td></tr>
+                    <tr><td>Units</td><td>150,000</td><td class="perf-high">11.27%</td></tr>
+                    <tr style="background:#f8fafc"><td><b>Projected Rev</b></td><td colspan="2" class="perf-low"><b>₦615.4M</b></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="section-title">YTD Comparative Audit (Jan-Mar)</div>
     <table>
         <thead>
-            <tr>
-                <th>Segment</th>
-                <th>March Revenue</th>
-                <th>Customers</th>
-                <th>Avg Spend</th>
-                <th>Contribution</th>
-            </tr>
+            <tr><th>Audit Cycle</th><th>Revenue Portfolio</th><th>Total Customers</th><th>Difference</th><th>% Status</th></tr>
         </thead>
         <tbody>
-            <tr><td>IG and FB — Susan</td><td class="green-text">₦12,337,800.00</td><td>237</td><td>₦52,058.23</td><td class="perf-high">24.46%</td></tr>
-            <tr><td>Customer Service — Ray</td><td class="green-text">₦7,428,600.00</td><td>118</td><td>₦62,954.24</td><td class="perf-high">14.73%</td></tr>
-            <tr><td>Landing Page — Mary</td><td class="green-text">₦5,496,400.00</td><td>129</td><td>₦42,607.75</td><td class="perf-high">10.90%</td></tr>
-            <tr style="background:#f0fdf4"><td>Other Channels</td><td class="green-text">₦25,174,200.00</td><td>226</td><td>₦111,390.27</td><td class="perf-high">49.91%</td></tr>
+            <tr><td>Jan - Mar 2025</td><td>₦200,044,122</td><td>4,085</td><td>-</td><td>-</td></tr>
+            <tr style="background: #fff1f2;"><td>Jan - Mar 2026</td><td class="green-text">₦153,860,835</td><td>2,250</td><td class="perf-low">-₦46,183,287</td><td class="perf-low">-23.09%</td></tr>
         </tbody>
     </table>
 
-    <div class="section-title">YTD Comparative Analytics (Jan - Mar)</div>
+    <div class="section-title">Individual Staff Performance Audit (March)</div>
     <table>
         <thead>
-            <tr>
-                <th>Audit Period</th>
-                <th>Revenue</th>
-                <th>Customers</th>
-                <th>Difference</th>
-                <th>% Change</th>
-            </tr>
+            <tr><th>Rep Name</th><th>March Revenue</th><th>Closed</th><th>Avg Ticket</th><th>Cont. %</th></tr>
         </thead>
         <tbody>
-            <tr><td>Jan-Mar 2025</td><td>₦200,044,122.61</td><td>4,085</td><td>-</td><td>-</td></tr>
-            <tr style="background:#fff1f2"><td>Jan-Mar 2026</td><td class="green-text">₦153,860,835.00</td><td>2,250</td><td class="perf-low">-₦46,183,287.61</td><td class="perf-low">-23.09%</td></tr>
+            <tr><td>Mary</td><td class="green-text">₦16,346,200</td><td>204</td><td>₦80,128</td><td class="perf-high">32.4%</td></tr>
+            <tr><td>Bolu</td><td class="green-text">₦9,706,400</td><td>131</td><td>₦74,094</td><td class="perf-high">19.2%</td></tr>
+            <tr><td>Susan</td><td class="green-text">₦4,614,800</td><td>65</td><td>₦70,996</td><td>9.1%</td></tr>
+            <tr><td>Rachel</td><td class="green-text">₦4,187,800</td><td>73</td><td>₦57,367</td><td>8.3%</td></tr>
+            <tr><td>Esther</td><td class="green-text">₦3,737,600</td><td>57</td><td>₦65,571</td><td>7.4%</td></tr>
+            <tr><td>Jaya</td><td class="green-text">₦3,644,000</td><td>58</td><td>₦62,827</td><td>7.2%</td></tr>
+            <tr><td>Lewa</td><td class="green-text">₦3,509,600</td><td>48</td><td>₦73,116</td><td>6.9%</td></tr>
+            <tr><td>Divine</td><td class="green-text">₦2,756,600</td><td>53</td><td>₦52,011</td><td>5.4%</td></tr>
+            <tr><td>Jane</td><td class="green-text">₦886,200</td><td>15</td><td>₦59,080</td><td>1.7%</td></tr>
         </tbody>
     </table>
 
-    <div class="section-title">Full 2026 YTD Staff Rankings</div>
+    <div class="section-title">Individual Lead Conversion Audit</div>
     <table>
         <thead>
-            <tr>
-                <th>Sales Representative</th>
-                <th>Annual Revenue (YTD)</th>
-                <th>Total Customers</th>
-                <th>Avg Ticket Size</th>
-                <th>YTD Contribution</th>
-            </tr>
+            <tr><th>Representative</th><th>Monthly Leads</th><th>Avg Daily</th><th>Converted</th><th>Efficiency %</th></tr>
         </thead>
         <tbody>
-            <tr><td>Mary</td><td class="green-text">₦50,342,546.00</td><td>734</td><td>₦68,586.57</td><td class="perf-high">32.72%</td></tr>
-            <tr><td>Bolu</td><td class="green-text">₦31,820,123.00</td><td>395</td><td>₦80,557.27</td><td class="perf-high">20.68%</td></tr>
-            <tr><td>Jaya</td><td class="green-text">₦12,916,190.00</td><td>191</td><td>₦67,624.03</td><td class="perf-low">8.39%</td></tr>
-            <tr><td>Susan</td><td class="green-text">₦12,882,092.00</td><td>198</td><td>₦65,061.07</td><td class="perf-low">8.37%</td></tr>
-            <tr><td>Esther</td><td class="green-text">₦11,264,400.00</td><td>181</td><td>₦62,234.25</td><td class="perf-low">7.32%</td></tr>
-            <tr><td>Lewa</td><td class="green-text">₦10,244,600.00</td><td>144</td><td>₦71,143.06</td><td class="perf-low">6.66%</td></tr>
-            <tr><td>Rachel</td><td class="green-text">₦9,864,311.00</td><td>173</td><td>₦57,019.14</td><td class="perf-low">6.41%</td></tr>
-            <tr><td>Divine</td><td class="green-text">₦9,201,200.00</td><td>172</td><td>₦53,495.35</td><td class="perf-low">5.98%</td></tr>
-            <tr><td>Jane</td><td class="green-text">₦886,200.00</td><td>15</td><td>₦59,080.00</td><td class="perf-low">0.58%</td></tr>
-        </tbody>
-    </table>
-
-    <div class="section-title">March Individual Performance & Conversion Audit</div>
-    <table>
-        <thead>
-            <tr>
-                <th>Rep Name</th>
-                <th>March Revenue</th>
-                <th>Closed</th>
-                <th>Conv. Rate</th>
-                <th>Share %</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>Mary</td><td class="green-text">₦16,346,200.00</td><td>204</td><td class="perf-high">15.69%</td><td class="perf-high">32.41%</td></tr>
-            <tr><td>Bolu</td><td class="green-text">₦9,706,400.00</td><td>131</td><td class="perf-high">10.92%</td><td class="perf-high">19.24%</td></tr>
-            <tr><td>Susan</td><td class="green-text">₦4,614,800.00</td><td>65</td><td class="perf-low">10.00%</td><td class="perf-low">9.15%</td></tr>
-            <tr><td>Rachel</td><td class="green-text">₦4,187,800.00</td><td>73</td><td class="perf-high">12.17%</td><td class="perf-low">8.30%</td></tr>
-            <tr><td>Esther</td><td class="green-text">₦3,737,600.00</td><td>57</td><td class="perf-high">16.29%</td><td class="perf-low">7.41%</td></tr>
-            <tr><td>Jaya</td><td class="green-text">₦3,644,000.00</td><td>58</td><td class="perf-low">8.92%</td><td class="perf-low">7.22%</td></tr>
-            <tr><td>Lewa</td><td class="green-text">₦3,509,600.00</td><td>48</td><td class="perf-low">8.00%</td><td class="perf-low">6.96%</td></tr>
-            <tr><td>Divine</td><td class="green-text">₦2,756,600.00</td><td>53</td><td class="perf-low">7.07%</td><td class="perf-low">5.47%</td></tr>
-            <tr><td>Jane</td><td class="green-text">₦886,200.00</td><td>15</td><td class="perf-low">3.33%</td><td class="perf-low">1.76%</td></tr>
+            <tr><td>Esther</td><td>350</td><td>15</td><td>57</td><td class="perf-high">16.29%</td></tr>
+            <tr><td>Mary</td><td>1,300</td><td>54</td><td>204</td><td class="perf-high">15.69%</td></tr>
+            <tr><td>Rachel</td><td>600</td><td>25</td><td>73</td><td class="perf-high">12.17%</td></tr>
+            <tr><td>Bolu</td><td>1,200</td><td>50</td><td>131</td><td class="perf-high">10.92%</td></tr>
+            <tr><td>Susan</td><td>650</td><td>27</td><td>65</td><td>10.00%</td></tr>
+            <tr><td>Jaya</td><td>650</td><td>27</td><td>58</td><td>8.92%</td></tr>
+            <tr><td>Lewa</td><td>600</td><td>25</td><td>48</td><td>8.00%</td></tr>
+            <tr><td>Divine</td><td>750</td><td>31</td><td>53</td><td class="perf-low">7.07%</td></tr>
+            <tr><td>Jane</td><td>450</td><td>19</td><td>15</td><td class="perf-low">3.33%</td></tr>
         </tbody>
     </table>
 
