@@ -1,210 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Executive Sales Audit - March 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --ceo-black: #0D0D0D;
-            --ceo-gold: #C5A059;
-            --ceo-emerald: #2E7D32;
-            --ceo-crimson: #C62828;
-            --glass-white: rgba(255, 255, 255, 0.05);
-            --border: rgba(197, 160, 89, 0.3);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SURUKA — EXECUTIVE MARCH PERFORMANCE AUDIT</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --suruka-green: #008751;
+        --suruka-dark: #004D2E;
+        --white: #FFFFFF;
+        --bg: #F8FAFB;
+        --text: #1E293B;
+        --muted: #64748B;
+        --border: #E2E8F0;
+        --red: #EF4444;
+    }
 
-        body {
-            background-color: var(--ceo-black);
-            color: #E0E0E0;
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding-bottom: 50px;
-        }
+    * { box-sizing: border-box; }
+    body {
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: 'Outfit', sans-serif;
+        margin: 0;
+        padding: 0 0 100px 0;
+    }
 
-        /* Fixed Header */
-        .exec-header {
-            background: linear-gradient(to right, #1A1A1A, #0D0D0D);
-            border-bottom: 1px solid var(--ceo-gold);
-            padding: 30px 50px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    /* THEATER-SCALE HEADER */
+    header {
+        background: var(--white);
+        border-bottom: 8px solid var(--suruka-green);
+        padding: 50px 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    }
+    .brand h1 { margin: 0; font-size: 56px; font-weight: 900; color: var(--suruka-green); letter-spacing: -3px; line-height: 0.8; }
+    .brand p { margin: 10px 0 0; font-size: 18px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 4px; }
+    
+    .meeting-info { text-align: right; }
+    .meeting-info h2 { margin: 0; font-size: 28px; color: var(--suruka-dark); }
+    .meeting-info span { font-size: 14px; font-weight: 800; background: var(--suruka-green); color: white; padding: 5px 15px; border-radius: 4px; }
 
-        .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .main-canvas { max-width: 1800px; margin: 60px auto; padding: 0 40px; }
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            margin: 0;
-            letter-spacing: 1px;
-            color: var(--ceo-gold);
-        }
+    /* CORE REVENUE DASHBOARD */
+    .hero-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 80px; }
+    .hero-card { background: var(--white); border-radius: 24px; padding: 40px; border: 1px solid var(--border); box-shadow: 0 20px 50px rgba(0,0,0,0.03); }
+    .h-label { font-size: 14px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 20px; }
+    .h-val { font-size: 48px; font-weight: 800; color: var(--suruka-dark); display: block; letter-spacing: -2px; }
+    .h-sub { font-size: 16px; margin-top: 15px; display: block; font-weight: 600; color: var(--red); }
+    .h-sub.pos { color: var(--suruka-green); }
 
-        .summary-pill {
-            background: var(--glass-white);
-            border: 1px solid var(--border);
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+    /* DEPARTMENTAL ANALYSIS */
+    .section-label { font-size: 24px; font-weight: 800; color: var(--suruka-dark); margin-bottom: 30px; display: flex; align-items: center; gap: 20px; }
+    .section-label::after { content: ""; height: 4px; flex-grow: 1; background: var(--border); border-radius: 10px; }
 
-        /* KPI Dashboard */
-        .kpi-container {
-            max-width: 1400px;
-            margin: 40px auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 0 50px;
-        }
+    .dept-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-bottom: 80px; }
+    .dept-card { background: var(--white); padding: 35px; border-radius: 20px; border-bottom: 6px solid var(--suruka-green); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+    .d-name { font-size: 13px; font-weight: 800; color: var(--muted); text-transform: uppercase; display: block; margin-bottom: 10px; }
+    .d-rev { font-size: 32px; font-weight: 800; color: var(--suruka-green); display: block; }
+    .d-stats { margin-top: 15px; font-size: 14px; color: var(--text); font-weight: 600; }
 
-        .kpi-card {
-            background: var(--glass-white);
-            border: 1px solid var(--border);
-            padding: 25px;
-            border-radius: 8px;
-            position: relative;
-        }
+    /* THE TEAM MATRIX - MASSIVE VISIBILITY */
+    .table-container { background: var(--white); border-radius: 32px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.05); }
+    table { width: 100%; border-collapse: collapse; }
+    th { padding: 30px 40px; background: #F9FAFB; text-align: left; font-size: 12px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; border-bottom: 2px solid var(--border); }
+    td { padding: 30px 40px; border-bottom: 1px solid #F1F5F9; font-size: 18px; font-weight: 600; }
+    
+    .name-lead { font-size: 22px; font-weight: 800; color: var(--suruka-dark); }
+    .rev-lead { font-size: 22px; font-weight: 800; color: var(--suruka-green); }
+    .pill { padding: 10px 20px; border-radius: 10px; font-size: 14px; font-weight: 800; }
+    .pill-green { background: #DCFCE7; color: #166534; }
+    .pill-gold { background: #FEF9C3; color: #854D0E; }
+    .pill-red { background: #FEE2E2; color: #991B1B; }
 
-        .kpi-label { font-size: 11px; color: var(--ceo-gold); text-transform: uppercase; font-weight: 700; margin-bottom: 10px; display: block; }
-        .kpi-val { font-size: 24px; font-weight: 700; display: block; margin-bottom: 5px; }
-        .kpi-change { font-size: 12px; font-weight: 600; }
-        .negative { color: var(--ceo-crimson); }
-        .positive { color: var(--ceo-emerald); }
-
-        /* Tables */
-        .section-wrap { max-width: 1400px; margin: 0 auto 50px; padding: 0 50px; }
-        .section-head { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--ceo-gold); margin-bottom: 25px; border-left: 4px solid var(--ceo-gold); padding-left: 15px; }
-        
-        .table-box { background: var(--glass-white); border-radius: 12px; border: 1px solid var(--border); overflow: hidden; }
-        table { width: 100%; border-collapse: collapse; text-align: left; }
-        th { background: rgba(197, 160, 89, 0.1); padding: 18px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--ceo-gold); }
-        td { padding: 16px 18px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px; }
-        
-        tr:hover { background: rgba(255,255,255,0.02); }
-        .highlight-name { font-weight: 700; color: #FFF; }
-        .currency { font-family: 'Inter'; font-weight: 600; color: var(--ceo-emerald); }
-
-        .segment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .segment-card { background: var(--glass-white); padding: 20px; border-radius: 8px; border-bottom: 3px solid var(--ceo-gold); }
-    </style>
+    .ytd-row { background: #F0FDF4; }
+</style>
 </head>
 <body>
 
-<header class="exec-header">
-    <div class="header-content">
-        <div>
-            <h1>Executive Sales Performance Audit</h1>
-            <span style="font-size: 12px; opacity: 0.6;">EnergyMall Strategic Report | March 2026</span>
-        </div>
-        <div class="summary-pill">Status: Operational Review</div>
+<header>
+    <div class="brand">
+        <h1>SURUKA</h1>
+        <p>Strategic Business Operations</p>
+    </div>
+    <div class="meeting-info">
+        <span>EXECUTIVE SESSION</span>
+        <h2>March 2026 Revenue Audit</h2>
     </div>
 </header>
 
-<div class="kpi-container">
-    <div class="kpi-card">
-        <span class="kpi-label">Gross Revenue</span>
-        <span class="kpi-val">₦46,922,800</span>
-        <span class="kpi-change negative">▼ ₦6.3M vs Prev. Month</span>
-    </div>
-    <div class="kpi-card">
-        <span class="kpi-label">Total Customers</span>
-        <span class="kpi-val">681</span>
-        <span class="kpi-change negative">▼ 77 Customers</span>
-    </div>
-    <div class="kpi-card">
-        <span class="kpi-label">New Acquisitions</span>
-        <span class="kpi-val">295</span>
-        <span class="kpi-change negative">▼ 46 New Leads</span>
-    </div>
-    <div class="kpi-card">
-        <span class="kpi-label">Team Conversion</span>
-        <span class="kpi-val">9.0%</span>
-        <span class="kpi-change positive">● Stable Lead Efficiency</span>
-    </div>
-</div>
+<div class="main-canvas">
 
-<div class="section-wrap">
-    <div class="section-head">Individual Performance Audit (March)</div>
-    <div class="table-box">
+    <div class="hero-grid">
+        <div class="hero-card">
+            <span class="h-label">Total Revenue (MAR)</span>
+            <span class="h-val">₦48,778,200</span>
+            <span class="h-sub">▼ ₦4,479,850 Monthly Variance</span>
+        </div>
+        <div class="hero-card">
+            <span class="h-label">Customer Expansion</span>
+            <span class="h-val">694 Closed</span>
+            <span class="h-sub">▼ 64 Units from Feb</span>
+        </div>
+        <div class="hero-card">
+            <span class="h-label">Lead Pipeline</span>
+            <span class="h-val">7,500 Leads</span>
+            <span class="h-sub pos">● Global Conversion: 9.0%</span>
+        </div>
+        <div class="hero-card">
+            <span class="h-label">New Acquisition</span>
+            <span class="h-val">295 New</span>
+            <span class="h-sub">▼ 46 from Feb</span>
+        </div>
+    </div>
+
+    <div class="section-label">Departmental Revenue Segmentation</div>
+    <div class="dept-grid">
+        <div class="dept-card">
+            <span class="d-name">Digital (IG & FB) - Susan</span>
+            <span class="d-rev">₦12,237,000</span>
+            <div class="d-stats">234 Customers | ₦52.2k Avg Ticket</div>
+        </div>
+        <div class="dept-card">
+            <span class="d-name">Landing Page - Mary</span>
+            <span class="d-rev">₦5,462,800</span>
+            <div class="d-stats">128 Customers | ₦42.6k Avg Ticket</div>
+        </div>
+        <div class="dept-card">
+            <span class="d-name">Customer Service - Ray</span>
+            <span class="d-rev">₦7,291,400</span>
+            <div class="d-stats">115 Customers | ₦63.4k Avg Ticket</div>
+        </div>
+        <div class="dept-card">
+            <span class="d-name">Other Global Channels</span>
+            <span class="d-rev">₦23,787,000</span>
+            <div class="d-stats">217 Customers | ₦109.6k Avg Ticket</div>
+        </div>
+    </div>
+
+    <div class="section-label">March Talent Audit & Conversion Matrix</div>
+    <div class="table-container">
         <table>
             <thead>
                 <tr>
-                    <th>Representative</th>
-                    <th>Monthly Revenue</th>
-                    <th>Customers Closed</th>
-                    <th>Avg Spend/Customer</th>
-                    <th>Conversion Rate</th>
+                    <th>Executive Representative</th>
+                    <th>Revenue Impact</th>
+                    <th>Closed Units</th>
+                    <th>Conversion Efficiency</th>
+                    <th>Avg Daily Leads</th>
+                    <th>Avg Ticket Spend</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td class="highlight-name">Mary</td><td class="currency">₦15,120,400</td><td>197</td><td>₦76,753.30</td><td class="positive">15.15%</td></tr>
-                <tr><td class="highlight-name">Bolu</td><td class="currency">₦8,910,800</td><td>124</td><td>₦71,861.29</td><td class="positive">10.33%</td></tr>
-                <tr><td class="highlight-name">Susan</td><td class="currency">₦4,144,200</td><td>62</td><td>₦66,841.94</td><td>9.54%</td></tr>
-                <tr><td class="highlight-name">Rachel</td><td class="currency">₦4,117,800</td><td>72</td><td>₦57,191.67</td><td>7.20%</td></tr>
-                <tr><td class="highlight-name">Jaya</td><td class="currency">₦3,610,400</td><td>57</td><td>₦63,340.35</td><td>8.77%</td></tr>
-                <tr><td class="highlight-name">Esther</td><td class="currency">₦3,376,400</td><td>53</td><td>₦63,705.66</td><td class="positive">15.14%</td></tr>
-                <tr><td class="highlight-name">Lewa</td><td class="currency">₦3,171,600</td><td>45</td><td>₦70,480.00</td><td>4.50%</td></tr>
-                <tr><td class="highlight-name">Divine</td><td class="currency">₦2,671,600</td><td>52</td><td>₦51,376.92</td><td>6.93%</td></tr>
-                <tr><td class="highlight-name">Jane</td><td class="currency">₦819,000</td><td>13</td><td>₦63,000.00</td><td class="negative">2.89%</td></tr>
+                <tr><td><span class="name-lead">Mary</span></td><td><span class="rev-lead">₦15,842,200</span></td><td>201</td><td><span class="pill pill-green">15.46%</span></td><td>54</td><td>₦78,816.92</td></tr>
+                <tr><td><span class="name-lead">Bolu</span></td><td><span class="rev-lead">₦9,639,200</span></td><td>129</td><td><span class="pill pill-gold">10.75%</span></td><td>50</td><td>₦74,722.48</td></tr>
+                <tr><td><span class="name-lead">Susan</span></td><td><span class="rev-lead">₦4,144,200</span></td><td>62</td><td><span class="pill pill-gold">9.54%</span></td><td>27</td><td>₦66,841.94</td></tr>
+                <tr><td><span class="name-lead">Rachel</span></td><td><span class="rev-lead">₦4,117,800</span></td><td>72</td><td>7.20%</td><td>42</td><td>₦57,191.67</td></tr>
+                <tr><td><span class="name-lead">Jaya</span></td><td><span class="rev-lead">₦3,644,000</span></td><td>58</td><td>8.92%</td><td>27</td><td>₦62,827.59</td></tr>
+                <tr><td><span class="name-lead">Esther</span></td><td><span class="rev-lead">₦3,410,000</span></td><td>54</td><td><span class="pill pill-green">15.43%</span></td><td>15</td><td>₦63,148.15</td></tr>
+                <tr><td><span class="name-lead">Lewa</span></td><td><span class="rev-lead">₦3,476,000</span></td><td>47</td><td><span class="pill pill-red">4.70%</span></td><td>42</td><td>₦73,957.45</td></tr>
+                <tr><td><span class="name-lead">Divine</span></td><td><span class="rev-lead">₦2,671,600</span></td><td>52</td><td>6.93%</td><td>31</td><td>₦51,376.92</td></tr>
+                <tr><td><span class="name-lead">Jane</span></td><td><span class="rev-lead">₦819,000</span></td><td>13</td><td><span class="pill pill-red">2.89%</span></td><td>19</td><td>₦63,000.00</td></tr>
             </tbody>
         </table>
     </div>
-</div>
 
-<div class="section-wrap">
-    <div class="section-head">Segment Performance Analysis</div>
-    <div class="segment-grid">
-        <div class="segment-card">
-            <span class="kpi-label">Digital Segment (Susan)</span>
-            <span class="kpi-val" style="font-size: 20px;">₦11,643,000</span>
-            <span style="font-size: 12px; color: var(--ceo-gold);">230 Customers | ₦50.6k Avg</span>
-        </div>
-        <div class="segment-card">
-            <span class="kpi-label">Customer Service (Ray)</span>
-            <span class="kpi-val" style="font-size: 20px;">₦6,987,000</span>
-            <span style="font-size: 12px; color: var(--ceo-gold);">113 Customers | ₦61.8k Avg</span>
-        </div>
-        <div class="segment-card">
-            <span class="kpi-label">Loyalty Program (Mary)</span>
-            <span class="kpi-val" style="font-size: 20px;">₦5,362,000</span>
-            <span style="font-size: 12px; color: var(--ceo-gold);">125 Customers | ₦42.8k Avg</span>
-        </div>
-    </div>
-</div>
+    <br><br>
 
-<div class="section-wrap">
-    <div class="section-head">2026 Annual YTD Standing</div>
-    <div class="table-box">
+    <div class="section-label">2026 Annual Performance Ranking (YTD)</div>
+    <div class="table-container">
         <table>
             <thead>
                 <tr>
-                    <th>Rep Name</th>
-                    <th>YTD Revenue</th>
-                    <th>YTD Customers</th>
-                    <th>Lifetime Avg Spend</th>
+                    <th>Rank</th>
+                    <th>Executive Representative</th>
+                    <th>YTD Total Revenue</th>
+                    <th>YTD Closed Units</th>
+                    <th>YTD Average Value</th>
                 </tr>
             </thead>
             <tbody>
-                <tr><td class="highlight-name">Mary</td><td class="currency">₦49,116,746</td><td>727</td><td>₦67,560.86</td></tr>
-                <tr><td class="highlight-name">Bolu</td><td class="currency">₦31,024,523</td><td>388</td><td>₦79,960.11</td></tr>
-                <tr><td class="highlight-name">Jaya</td><td class="currency">₦12,882,590</td><td>190</td><td>₦67,803.11</td></tr>
-                <tr><td class="highlight-name">Susan</td><td class="currency">₦12,411,492</td><td>195</td><td>₦63,648.68</td></tr>
-                <tr><td class="highlight-name">Esther</td><td class="currency">₦10,903,200</td><td>177</td><td>₦61,600.00</td></tr>
+                <tr class="ytd-row"><td><b>01</b></td><td><span class="name-lead">Mary</span></td><td><span class="rev-lead">₦49,838,546</span></td><td>731</td><td>₦68,178.59</td></tr>
+                <tr><td><b>02</b></td><td><span class="name-lead">Bolu</span></td><td><span class="rev-lead">₦31,752,923</span></td><td>393</td><td>₦80,796.24</td></tr>
+                <tr><td><b>03</b></td><td><span class="name-lead">Jaya</span></td><td><span class="rev-lead">₦12,916,190</span></td><td>191</td><td>₦67,624.03</td></tr>
+                <tr><td><b>04</b></td><td><span class="name-lead">Susan</span></td><td><span class="rev-lead">₦12,411,492</span></td><td>195</td><td>₦63,648.68</td></tr>
+                <tr><td><b>05</b></td><td><span class="name-lead">Esther</span></td><td><span class="rev-lead">₦10,936,800</span></td><td>178</td><td>₦61,442.70</td></tr>
+                <tr><td><b>06</b></td><td><span class="name-lead">Lewa</span></td><td><span class="rev-lead">₦10,211,000</span></td><td>143</td><td>₦71,405.59</td></tr>
+                <tr><td><b>07</b></td><td><span class="name-lead">Rachel</span></td><td><span class="rev-lead">₦9,794,311</span></td><td>172</td><td>₦56,943.67</td></tr>
+                <tr><td><b>08</b></td><td><span class="name-lead">Divine</span></td><td><span class="rev-lead">₦9,116,200</span></td><td>171</td><td>₦53,311.11</td></tr>
+                <tr><td><b>09</b></td><td><span class="name-lead">Jane</span></td><td><span class="rev-lead">₦819,000</span></td><td>13</td><td>₦63,000.00</td></tr>
             </tbody>
         </table>
     </div>
+
 </div>
 
 </body>
