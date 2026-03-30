@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Sales Audit - March 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ceo-black: #0D0D0D;
+            --ceo-gold: #C5A059;
+            --ceo-emerald: #2E7D32;
+            --ceo-crimson: #C62828;
+            --glass-white: rgba(255, 255, 255, 0.05);
+            --border: rgba(197, 160, 89, 0.3);
+        }
+
+        body {
+            background-color: var(--ceo-black);
+            color: #E0E0E0;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding-bottom: 50px;
+        }
+
+        /* Fixed Header */
+        .exec-header {
+            background: linear-gradient(to right, #1A1A1A, #0D0D0D);
+            border-bottom: 1px solid var(--ceo-gold);
+            padding: 30px 50px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin: 0;
+            letter-spacing: 1px;
+            color: var(--ceo-gold);
+        }
+
+        .summary-pill {
+            background: var(--glass-white);
+            border: 1px solid var(--border);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* KPI Dashboard */
+        .kpi-container {
+            max-width: 1400px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 0 50px;
+        }
+
+        .kpi-card {
+            background: var(--glass-white);
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .kpi-label { font-size: 11px; color: var(--ceo-gold); text-transform: uppercase; font-weight: 700; margin-bottom: 10px; display: block; }
+        .kpi-val { font-size: 24px; font-weight: 700; display: block; margin-bottom: 5px; }
+        .kpi-change { font-size: 12px; font-weight: 600; }
+        .negative { color: var(--ceo-crimson); }
+        .positive { color: var(--ceo-emerald); }
+
+        /* Tables */
+        .section-wrap { max-width: 1400px; margin: 0 auto 50px; padding: 0 50px; }
+        .section-head { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--ceo-gold); margin-bottom: 25px; border-left: 4px solid var(--ceo-gold); padding-left: 15px; }
+        
+        .table-box { background: var(--glass-white); border-radius: 12px; border: 1px solid var(--border); overflow: hidden; }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th { background: rgba(197, 160, 89, 0.1); padding: 18px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--ceo-gold); }
+        td { padding: 16px 18px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px; }
+        
+        tr:hover { background: rgba(255,255,255,0.02); }
+        .highlight-name { font-weight: 700; color: #FFF; }
+        .currency { font-family: 'Inter'; font-weight: 600; color: var(--ceo-emerald); }
+
+        .segment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .segment-card { background: var(--glass-white); padding: 20px; border-radius: 8px; border-bottom: 3px solid var(--ceo-gold); }
+    </style>
+</head>
+<body>
+
+<header class="exec-header">
+    <div class="header-content">
+        <div>
+            <h1>Executive Sales Performance Audit</h1>
+            <span style="font-size: 12px; opacity: 0.6;">EnergyMall Strategic Report | March 2026</span>
+        </div>
+        <div class="summary-pill">Status: Operational Review</div>
+    </div>
+</header>
+
+<div class="kpi-container">
+    <div class="kpi-card">
+        <span class="kpi-label">Gross Revenue</span>
+        <span class="kpi-val">₦46,922,800</span>
+        <span class="kpi-change negative">▼ ₦6.3M vs Prev. Month</span>
+    </div>
+    <div class="kpi-card">
+        <span class="kpi-label">Total Customers</span>
+        <span class="kpi-val">681</span>
+        <span class="kpi-change negative">▼ 77 Customers</span>
+    </div>
+    <div class="kpi-card">
+        <span class="kpi-label">New Acquisitions</span>
+        <span class="kpi-val">295</span>
+        <span class="kpi-change negative">▼ 46 New Leads</span>
+    </div>
+    <div class="kpi-card">
+        <span class="kpi-label">Team Conversion</span>
+        <span class="kpi-val">9.0%</span>
+        <span class="kpi-change positive">● Stable Lead Efficiency</span>
+    </div>
+</div>
+
+<div class="section-wrap">
+    <div class="section-head">Individual Performance Audit (March)</div>
+    <div class="table-box">
+        <table>
+            <thead>
+                <tr>
+                    <th>Representative</th>
+                    <th>Monthly Revenue</th>
+                    <th>Customers Closed</th>
+                    <th>Avg Spend/Customer</th>
+                    <th>Conversion Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="highlight-name">Mary</td><td class="currency">₦15,120,400</td><td>197</td><td>₦76,753.30</td><td class="positive">15.15%</td></tr>
+                <tr><td class="highlight-name">Bolu</td><td class="currency">₦8,910,800</td><td>124</td><td>₦71,861.29</td><td class="positive">10.33%</td></tr>
+                <tr><td class="highlight-name">Susan</td><td class="currency">₦4,144,200</td><td>62</td><td>₦66,841.94</td><td>9.54%</td></tr>
+                <tr><td class="highlight-name">Rachel</td><td class="currency">₦4,117,800</td><td>72</td><td>₦57,191.67</td><td>7.20%</td></tr>
+                <tr><td class="highlight-name">Jaya</td><td class="currency">₦3,610,400</td><td>57</td><td>₦63,340.35</td><td>8.77%</td></tr>
+                <tr><td class="highlight-name">Esther</td><td class="currency">₦3,376,400</td><td>53</td><td>₦63,705.66</td><td class="positive">15.14%</td></tr>
+                <tr><td class="highlight-name">Lewa</td><td class="currency">₦3,171,600</td><td>45</td><td>₦70,480.00</td><td>4.50%</td></tr>
+                <tr><td class="highlight-name">Divine</td><td class="currency">₦2,671,600</td><td>52</td><td>₦51,376.92</td><td>6.93%</td></tr>
+                <tr><td class="highlight-name">Jane</td><td class="currency">₦819,000</td><td>13</td><td>₦63,000.00</td><td class="negative">2.89%</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="section-wrap">
+    <div class="section-head">Segment Performance Analysis</div>
+    <div class="segment-grid">
+        <div class="segment-card">
+            <span class="kpi-label">Digital Segment (Susan)</span>
+            <span class="kpi-val" style="font-size: 20px;">₦11,643,000</span>
+            <span style="font-size: 12px; color: var(--ceo-gold);">230 Customers | ₦50.6k Avg</span>
+        </div>
+        <div class="segment-card">
+            <span class="kpi-label">Customer Service (Ray)</span>
+            <span class="kpi-val" style="font-size: 20px;">₦6,987,000</span>
+            <span style="font-size: 12px; color: var(--ceo-gold);">113 Customers | ₦61.8k Avg</span>
+        </div>
+        <div class="segment-card">
+            <span class="kpi-label">Loyalty Program (Mary)</span>
+            <span class="kpi-val" style="font-size: 20px;">₦5,362,000</span>
+            <span style="font-size: 12px; color: var(--ceo-gold);">125 Customers | ₦42.8k Avg</span>
+        </div>
+    </div>
+</div>
+
+<div class="section-wrap">
+    <div class="section-head">2026 Annual YTD Standing</div>
+    <div class="table-box">
+        <table>
+            <thead>
+                <tr>
+                    <th>Rep Name</th>
+                    <th>YTD Revenue</th>
+                    <th>YTD Customers</th>
+                    <th>Lifetime Avg Spend</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="highlight-name">Mary</td><td class="currency">₦49,116,746</td><td>727</td><td>₦67,560.86</td></tr>
+                <tr><td class="highlight-name">Bolu</td><td class="currency">₦31,024,523</td><td>388</td><td>₦79,960.11</td></tr>
+                <tr><td class="highlight-name">Jaya</td><td class="currency">₦12,882,590</td><td>190</td><td>₦67,803.11</td></tr>
+                <tr><td class="highlight-name">Susan</td><td class="currency">₦12,411,492</td><td>195</td><td>₦63,648.68</td></tr>
+                <tr><td class="highlight-name">Esther</td><td class="currency">₦10,903,200</td><td>177</td><td>₦61,600.00</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
